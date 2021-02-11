@@ -3,8 +3,56 @@
     <div class="profile_inner">
         {{- if .imageUrl}}<img src="{{ .imageUrl}}" alt="{{ .imageTitle | default "profile image" }}"
             height="{{- .imageHeight | default 150 -}}" width="{{- .imageWidth | default 150 -}}" />{{- end}}
-        <h1>{{- .title | default $.Site.Title | markdownify -}}</h1>
-        <span>{{- .subtitle | markdownify -}}</span>
+        
+
+        {{/* Simon Game */}}
+        <script>
+          // REAAAAALLY Like this personal site
+          // https://flaviocopes.com/
+
+          document.addEventListener('DOMContentLoaded', (event) => {
+            function notePressed(e) {
+              // alert('clicked!');
+            };
+
+            const corner1 = document.getElementsByClassName('corner1')[0];
+            corner1.addEventListener('click', notePressed, false);
+          });
+        </script>
+
+        <div class="simon-game">
+          <div class="simon-game-row">
+            <a href="/blog">
+              <span class="simon-svg corner1">
+                <p class="button-text button-text-1">Blog</p>
+              </span>
+            </a>
+            <a href="/about">
+              <span class="simon-svg corner2">
+                <p class="button-text button-text-2">About</p>
+              </span>
+            </a>
+          </div>
+          <div class="simon-game-row">
+            <h1>{{- .title | default $.Site.Title | markdownify -}}</h1>
+            <span>{{- .subtitle | markdownify -}}</span>
+          </div>
+          <div class="simon-game-row">
+            <a href="https://archillect.com/tv" target="_blank">
+              <span class="simon-svg corner3">
+                <p class="button-text button-text-3">? ? ?</p>
+              </span>
+            </a>
+            <a href="/work">
+              <span class="simon-svg corner4">
+                <p class="button-text button-text-4">Work</p>
+              </span>
+            </a>
+          </div>
+        </div>
+        {{/* End Simon Game */}}
+
+
         {{- partial "social_icons.html" $.Site.Params.socialIcons -}}
 
         {{- with .buttons }}
