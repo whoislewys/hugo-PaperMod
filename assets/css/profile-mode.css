@@ -102,6 +102,12 @@
   transform: rotate(135deg);
 }
 
+/* preload images so they don't flash on active */
+.simon-game::after{
+   position:absolute; width:0; height:0; overflow:hidden; z-index:-1; /* hide images */
+   content: url(../../../../simon/simon-says-corner-1-unpressed.svg) url(../../../../simon/simon-says-corner-1-pressed.svg) url(../../../../simon/simon-says-corner-2-unpressed.svg) url(../../../../simon/simon-says-corner-2-pressed.svg) url(../../../../simon/simon-says-corner-3-unpressed.svg) url(../../../../simon/simon-says-corner-3-pressed.svg) url(../../../../simon/simon-says-corner-4-unpressed.svg) url(../../../../simon/simon-says-corner-4-pressed.svg); /* load images */
+}
+
 .corner1 {
   background-image: url(../../../../simon/simon-says-corner-1-unpressed.svg);
 }
