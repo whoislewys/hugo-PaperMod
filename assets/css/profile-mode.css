@@ -144,3 +144,10 @@
   background-image: url(../../../../simon/simon-says-corner-4-pressed.svg);
   border-radius: 13%;
 }
+
+@media only screen
+  and (max-width: 815px) {
+    .simon-svg {
+      display: none;
+    }
+}
